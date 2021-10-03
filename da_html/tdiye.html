@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="../css/tdiye.css">
   <link rel="shortcut icon" type="image/png" href="../img/android-chrome-512x512.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+  <script type="text/javascript" src="../processing.js"></script>
 </head>
 
 <body>
@@ -12,14 +13,9 @@
   <nav>
     <p>Santino Santos</p>
     <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="#">Portfolio</a>
-        <ul>
-          <li><a href="../digitalart.html">Digital Art</a></li>
-          <li><a href="../videoproduction.html">Videos</a></li>
-        </ul>
+      <li><a href="../about.html">Home</a></li>
+      <li><a href="../digitalart.html">Portfolio</a>
       </li>
-      <li><a href="../about.html">About</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -33,7 +29,100 @@
   <div class="grid">
 <!--Box 1-->
     <div class="exercise1img">
-      <a href="../img/thumbnail/tdiye.png"><img class="img1" title="The Dawn is Your Enemy" src="../img/thumbnail/tdiye.png"></a>
+      <script type="text/processing">
+
+        int angle = 0;
+
+void setup() {
+  size(800, 800);
+  background(20);
+  noStroke();
+  colorMode(HSB, 360, 100, 100);
+  frameRate(60);
+}
+
+void draw() {
+  color t = color(20,10);
+  fill(t);
+  rect(0, 0, width, height);
+  TinoDippinDots();
+  TinoMakesStars();
+  OrbitStar();
+ // recordit();
+}
+
+void TinoDippinDots() {
+  float r = random(50);
+  float rloop = random(200);
+  for (int i = 0; i < r; i++) {
+    fill(r+150, rloop+10, random(150));
+    ellipse(random(width), random(height), r%10, r%10);
+  }
+}
+void OrbitStar() {
+  color k = color(100,0,255);
+  translate(400,400);
+  rotate(radians(angle));
+  fill(k);
+  star(250, 50, 50, 10, 10);
+  
+  angle=angle+1;
+  
+  }
+  
+void TinoMakesStars() {
+  pushMatrix();
+  fill(250, 50, 100);
+  translate(width*0.5, height*0.5);
+  rotate(frameCount / 100.0);
+  star(0, 0, 190, 100, 40); 
+  popMatrix();
+
+  pushMatrix();
+  fill(250, 100, 250);
+  translate(width*0.5, height*0.5);
+  rotate(frameCount / 800.0);
+  if (frameCount == 100) {
+    rotate(frameCount%20);
+  } else {
+    rotate(frameCount / 800.0);
+    star(0, 0, 180, 100, 40); 
+    popMatrix();
+
+    fill(20, 0, 100);
+    text("the dawn is your enemy", sin(width/2), height);
+  }
+}
+void star(float x, float y, float radius1, float radius2, int npoints) {
+  float angle = TWO_PI / npoints;
+  float halfAngle = angle/2.0;
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = x + cos(a) * radius2;
+    float sy = y + sin(a) * radius2;
+    vertex(sx, sy);
+    sx = x + cos(a+halfAngle) * radius1;
+    sy = y + sin(a+halfAngle) * radius1;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
+
+//void recordit() {
+  
+   //if ( frameCount < 500 ) {
+   // println(frameCount);
+  
+  //saveFrame("frames/ex1_test_####.png");
+  
+  //} else {
+    //exit(); 
+  //}
+//}
+
+      </script>
+
+      <canvas id="" style="border:1px solid black;"></canvas>
 
         <h2 class="h2" style="color:#a393eb">The Dawn is Your Enemy (2021)</h2>
 

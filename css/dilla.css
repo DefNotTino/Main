@@ -21,13 +21,16 @@
 
 
 body{
-
-  background-size: 1920px 1180px;
   background-color: #534e5c;
+  background-size: cover;
+  background-image: url(img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   min-height:100%; 
-  position:relative; 
-  
+  min-width: 100%;
 }
+
 
 nav {
   width: 100%;
@@ -110,6 +113,7 @@ nav ul li ul li a:hover {
   padding-right: 200px;
   grid-gap: 3px;
   text-decoration: none;
+  opacity: 97%;
 }
 
 .grid div:nth-child(odd) {
@@ -123,8 +127,8 @@ nav ul li ul li a:hover {
 }
 
 .img1 {
-  width: 1000px;
-  margin: auto;
+  width: 90%;
+  margin: 5%;
   padding-top: 50px;
   text-align: center;
   display: flex;
@@ -135,7 +139,7 @@ nav ul li ul li a:hover {
 }
 
 .img2 {
-  width: 1400px;
+  width: 90%;
   margin: auto;
   padding-top: 10px;
   text-align: center;
@@ -211,7 +215,7 @@ a:hover {
   margin-top: 10px;
   color: #whitesmoke;
   line-height: 1.6;
-  font-size: 20px;
+  font-size: 1vw;
   text-indent: 30px;
 }
 
@@ -237,11 +241,11 @@ h5 {
 h1 {
   text-align: center;
   font-family: Helvetica,sans-serif;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 2%;
+  margin-bottom: 2%;
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 25px;
+  font-size: 1.5vw;
   resize: none;
   width: auto;
   height: auto;

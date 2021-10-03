@@ -21,13 +21,16 @@
 
 
 body{
-
-  background-size: 1920px 1180px;
   background-color: #534e5c;
+  background-size: cover;
+  background-image: url(img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   min-height:100%; 
-  position:relative; 
-  
+  min-width: 100%;
 }
+
 
 nav {
   width: 100%;
@@ -102,14 +105,15 @@ nav ul li ul li a:hover {
 /*------main-------*/
 
 .grid {
-  grid-template-columns:  1fr;
   display: grid;
-  margin-top: 50px;
-  margin-bottom: 10px;
-  padding-left: 200px;
-  padding-right: 200px;
-  grid-gap: 3px;
-  text-decoration: none;
+  grid-template-columns: 1fr;
+  width: auto;
+  border-radius: 10px;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: 30px;
+  justify-content: center;
+  opacity: 96%;
 }
 
 .grid div:nth-child(odd) {
@@ -123,12 +127,12 @@ nav ul li ul li a:hover {
 }
 
 .fa {
-  padding: 20px;
+  padding: 1.3%;
   font-size: 30px;
-  width: 50px;
+  width: 3%;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 0.8%;
   border-radius: 10%;
   justify-content: center;
   align-items: center;
@@ -144,6 +148,7 @@ nav ul li ul li a:hover {
   padding-right: auto;
   padding-bottom: auto;
 }
+
 .fa:hover {
   opacity: 0.7;
 }
@@ -151,59 +156,69 @@ nav ul li ul li a:hover {
 .fa-instagram {
   background: #d600a1;
   color: white;
-
+  margin: 1%;
 }
 
 .fa-twitter {
   background: #125688;
   color: white;
-  margin-left: 555px;
-  margin-bottom: 300px;
-  margin-top: 130px;
+  margin-left: 38%;
+  margin-bottom: 5%;
+  margin-top: 10%;
 }
 
 .fa-discord {
   background: #5865F2;
   color: white;
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  padding: 1.4%;
+  font-size: 1.6vw;
+  width: 3%;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 3% 1%;
   border-radius: 10%;
+}
+
+.fa-discord:hover {
+  opacity: 0.7;
 }
 
 .fa-envelope-open {
   background: #00a64b;
   color: white;
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  padding: 1.4%;
+  font-size: 1.6vw;
+  width: 3%;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 3% 1%;
   border-radius: 10%;
 }
 
 
 h1 {
-  color: #ffffff;
-  margin-left: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-family: helvetica;
   text-align: center;
+  font-family: Helvetica,sans-serif;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.5vw;
+  resize: none;
+  width: auto;
+  height: auto;
+  color: #f0f0f0;
 }
+
 
 .firsttext {
   color: #ffffff;
-  margin: 30px;
-  padding-left: 150px;
-  padding-right: 150px;
+  margin: 3%;
+  padding-left: 30%;
+  padding-right: 30%;
   text-align: center;
   font-family: arial;
-  font-size: 18px;
+  font-size: 1vw;
 }
 
 
@@ -215,7 +230,7 @@ h1 {
   width: 100%;
   height: auto;
   background-color: #009cad;
-  margin-top: 155px;
-  position: sticky;
+  margin-top: 6%;
+  position: absolute;
 
 }

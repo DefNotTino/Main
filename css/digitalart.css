@@ -21,10 +21,14 @@
 
 
 body{
-  background-size: 1920px 1180px;
   background-color: #534e5c;
+  background-size: cover;
+  background-image: url(img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   min-height:100%; 
-  position:relative;
+  min-width: 100%;
 }
 
 nav {
@@ -102,29 +106,77 @@ nav ul li ul li a:hover {
 .grid {
   display: grid;
   grid-template-columns: 1fr;
+  width: auto;
   border-radius: 10px;
-  padding-right: 350px;
-  padding-left: 350px;
+  padding-right: 10%;
+  padding-left: 10%;
   margin-top: 30px;
+  justify-content: center;
 }
 
 .grid div:nth-child(even){
   background-color: #006879;
   border-radius: 10px;
+  padding-left: 3%;
+  padding-right: 2%;
 
 }
 
 .grid div:nth-child(odd){
   background-color: #006879;
   border-radius: 10px;
+  padding-left: 3%;
+  padding-right: 2%;
+  opacity: 97%;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: auto;
+  border-radius: 10px;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.grid2 div:nth-child(even){
+  background-color: #006879;
+  border-radius: 10px;
+  padding-left: 3%;
+  padding-right: 2%;
+
+}
+
+.grid2 div:nth-child(odd){
+  background-color: #006879;
+  border-radius: 10px;
+  padding-left: 3%;
+  padding-right: 2%;
+  opacity: 97%;
 }
 
 h1 {
   text-align: center;
-  justify-content: safe center;
   font-family: Helvetica,sans-serif;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 1.5vw;
+  resize: none;
+  width: auto;
+  height: auto;
+  color: #f0f0f0;
+}
+
+
+h3 {
+  text-align: center;
+  font-family: Helvetica,sans-serif;
+  margin-top: 10%;
+  margin-bottom: 10%;
   text-transform: uppercase;
   font-weight: normal;
   font-size: 25px;
@@ -156,7 +208,7 @@ hr.new5 {
 }
 
 .gallery img{
-  width: 230px;
+  width: 80%;
   padding: 10px;
   transition: 1s;
   filter: grayscale(100%);
@@ -174,8 +226,17 @@ div.item {
     vertical-align: top;
     display: inline-block;
     text-align: center;
-    width: 290px;
+    width: 25%;
 }
+
+div.item2 {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 28%;;
+    padding-bottom: 10%;
+}
+
 
 .caption {
     display: block;

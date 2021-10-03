@@ -21,12 +21,14 @@
 
 
 body{
-
-  background-size: 1920px 1180px;
   background-color: #534e5c;
+  background-size: cover;
+  background-image: url(img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   min-height:100%; 
-  position:relative; 
-  
+  min-width: 100%;
 }
 
 nav {
@@ -102,24 +104,27 @@ nav ul li ul li a:hover {
 /*------main-------*/
 
 .grid {
-  grid-template-columns:  1fr;
   display: grid;
-  margin-top: 50px;
-  margin-bottom: 80px;
-  padding-left: 200px;
-  padding-right: 200px;
-  grid-gap: 3px;
-  text-decoration: none;
+  grid-template-columns: 1fr;
+  width: auto;
+  border-radius: 10px;
+  padding-right: 10%;
+  padding-left: 10%;
+  margin-top: 30px;
+  justify-content: center;
+
 }
 
 .grid div:nth-child(odd) {
   background-color: #006879;
   border-radius: 5px;
+  opacity: 97%;
 }
 
 .grid div:nth-child(even) {
   background-color: #ebf0f6;
   border-radius: 5px;
+  opacity: 97%;
 }
 
 .img1 {
@@ -134,6 +139,15 @@ nav ul li ul li a:hover {
   padding-bottom: 50px;
 }
 
+canvas{
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left:23%;
+  margin-right: 23%;
+  border-radius: 10px;
+  width: 50%;
+
+}
 
 .img2 {
   width: 250px;
@@ -144,6 +158,7 @@ nav ul li ul li a:hover {
   border-radius: 5px;
   text-decoration: none;
 }
+
 
 span.document {
   text-decoration: none;
@@ -199,12 +214,12 @@ li {
 
 .p2 {
   font-family: Helvetica;
-  padding-left: 50px;
-  padding-right: 100px;
+  padding-left: 2%;
+  padding-right: 8%;
   margin-top: 10px;
   color: #whitesmoke;
   line-height: 1.6;
-  font-size: 20px;
+  font-size: 1vw;
   text-indent: 30px;
 }
 
@@ -212,7 +227,7 @@ h6 {
   text-align: left;
   font-family: Optima;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1vw;
   margin-top: 40px;
   margin-left: 52px;
   color:  #ebf0f6;
@@ -230,17 +245,16 @@ h5 {
 h1 {
   text-align: center;
   font-family: Helvetica,sans-serif;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 2%;
+  margin-bottom: 2%;
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 25px;
+  font-size: 1.5vw;
   resize: none;
   width: auto;
   height: auto;
   color: #f0f0f0;
 }
-
 
 hr.new5 {
   margin-end: auto;
