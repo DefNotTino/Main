@@ -1,0 +1,131 @@
+//References listed at the bottom of the page
+
+
+sscurve c1;
+sscurve c2;
+
+void setup() {
+  size(1920, 1080, P3D);
+  background(HSB, 0, 7, 7);
+  push();
+  c1 = new sscurve(-10, 7770, 777, 1920, 0, 9000, 777, 777, color(#5a082d, 77));
+  c2 = new sscurve(1080, 7, 90, 5, 1920, 800, 4700, 77, color(#9d0b28, 77));
+  pop();
+}
+
+
+
+
+void draw () {
+camera(70.0, 35.0, frameCount, 50.0, 50.0, 0.0,  0.0, 1.0, 0.0);
+
+rotateX(-PI/6);
+
+rotateY(PI/3);
+  pushMatrix();
+
+  //colorMode(RGB);
+
+  //moves the orgin point
+  translate(width/2, height/2.2);
+
+  //smooth = anti-aliasing; basically, it removes shaky edges 
+  smooth();
+
+  //noFill = lines will not spread color; remove the // in fill to add color
+  noFill();
+  //fill(insert color here);
+
+  //the size of each individual line
+  strokeWeight(2);
+  popMatrix();
+
+  //cordinates learned from the triangle code taken from EX4
+  //these points are controled for the curves
+
+  //the display method from the other tab, its getting called here on void draw to actually display the art, hence the name
+  c1.display();
+  c2.display();
+
+} 
+//only other method that is only used to save data
+void keyPressed() {
+  //The command prints the current frame
+  if ( key == 'p' || key == 'P') {
+    saveFrame("frame_data/curves_####.png");
+  } else {
+  }
+}
+
+//Noise : https://processing.org/examples/noise.html
+//Bezier Curve: https://processing.org/reference/bezier_.html
+//Inspired by Eddy Benitez, who messed around with the Bezier earlier in the semester
+
+<!--------------END OF FIRST PAGE---------------------------------------!>
+
+//the class that is being called to the other tab
+class sscurve {
+  float x1;
+  float x2;
+  float x3;
+  float x4;
+  float y1;
+  float y2;
+  float y3;
+  float y4;
+  float vx1;
+  float vx2;
+  float vx3;
+  float vx4;
+  float vy1;
+  float vy2;
+  float vy3;
+  float vy4;
+  float time;
+  float angle;
+  float anglespeed;
+  color c; 
+  color dc;
+
+  sscurve(float vx1, float vx2, float vx3, float vx4, float vy1, float vy2, float vy3, float vy4, color lc) {
+    x1 = vx1;
+    x2 = vx2;
+    x3 = vx3;
+    x4 = vx4;
+    y1 = vy1;
+    y2 = vy2;
+    y3 = vy3;
+    y4 = vy4;
+    time = frameCount % 360 ;
+    angle = 0;
+    anglespeed = random(-4, 4);
+    c = lc;
+    dc = c;
+  }
+
+  void update() {
+
+    angle+=anglespeed;
+  }
+
+  void display() {
+
+    //push();
+
+    //rotate(radians(angle));
+
+    thatcurve();
+
+    //pop();
+  }
+
+
+  void thatcurve() {
+    colorMode(HSB);
+    float t = frameCount / 100.0;
+    for ( int i = 1; i < 2; i++ ) {
+      stroke(c);
+      bezier(y1, x1, noise(2+y2+x2, i, t)* 1000, noise(3+y3+x3, i, t)* 2000, noise(4, i, t)* 3000, noise(5, i, t)* 4000, y4, x4);
+    }
+  }
+}
